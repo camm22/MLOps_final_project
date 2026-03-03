@@ -48,8 +48,9 @@ jobs:
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
+        git fetch origin
         git checkout main
-        git merge staging --no-ff -m "Promote staging to production [skip ci]"
+        git merge origin/staging --no-ff -m "Promote staging to production [skip ci]"
         git push origin main
 
     - name: Trigger Render Production Deploy
