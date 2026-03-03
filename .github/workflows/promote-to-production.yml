@@ -37,9 +37,9 @@ jobs:
         import mlflow
         import os
         client = mlflow.tracking.MlflowClient()
-        latest_staging = client.get_latest_versions('iris_logistic_model', stages=['Staging'])[0]
-        client.set_registered_model_alias('iris_logistic_model', 'Production', latest_staging.version)
-        print(f'Modèle version {latest_staging.version} promu en @Production')
+        staging_version = client.get_model_version_by_alias('iris_logistic_model', 'staging')
+        client.set_registered_model_alias('iris_logistic_model', 'production', staging_version.version)
+        print(f'Modèle version {staging_version.version} promu en @production')
         "
 
     - name: Merge Staging to Main
