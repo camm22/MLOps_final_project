@@ -6,7 +6,7 @@ WORKDIR /app
 
 # 3. Copie du fichier de dépendances
 # On remonte d'un cran pour prendre le requirements.txt à la racine
-COPY ../requirements.txt .
+COPY requirements.txt .
 
 # 4. Installation des dépendances
 RUN pip install --no-cache-dir -r requirements.txt
