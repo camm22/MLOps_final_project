@@ -3,6 +3,9 @@ name: Promote to Production
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   quality-gate-and-promote:
     runs-on: ubuntu-latest
@@ -16,6 +19,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
       uses: actions/setup-python@v5
