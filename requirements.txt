@@ -1,0 +1,19 @@
+# Backend
+fastapi
+uvicorn
+pydantic
+
+# ML
+scikit-learn
+pandas
+numpy
+joblib
+
+# Data versioning
+dvc
+dvc-s3
+dagshub
+
+# Testing
+pytest
+httpx
