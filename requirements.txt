@@ -10,6 +10,7 @@ numpy
 joblib
 
 # Data versioning
+mlflow
 dvc
 dvc-s3
 dagshub
