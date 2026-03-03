@@ -9,7 +9,7 @@ app = FastAPI(title="MLOps Iris API")
 os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/camm22/MLOps_final_project.mlflow"
 
 MODEL_NAME = "iris_logistic_model"
-MODEL_STAGE = "Production" 
+MODEL_STAGE = os.getenv("MODEL_STAGE", "@staging")
 
 model = None
 
