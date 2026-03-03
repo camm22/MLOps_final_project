@@ -15,7 +15,7 @@ model = None
 
 # On essaie de charger le modèle au démarrage
 try:
-    model = mlflow.pyfunc.load_model(f"models:/{MODEL_NAME}@{MODEL_STAGE}")
+    model = mlflow.pyfunc.load_model(f"models:/{MODEL_NAME}{MODEL_STAGE}")
     print(f"Modèle {MODEL_NAME} chargé avec succès depuis {MODEL_STAGE}")
 except Exception as e:
     print(f"Attention : Impossible de charger le modèle ({e})")
