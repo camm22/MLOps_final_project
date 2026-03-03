@@ -4,15 +4,14 @@ FROM python:3.12-slim
 # 2. Définition du dossier de travail
 WORKDIR /app
 
-# 3. Copie du fichier de dépendances
-# On remonte d'un cran pour prendre le requirements.txt à la racine
+# 3. Copie du fichier de dépendances depuis la racine
 COPY requirements.txt .
 
 # 4. Installation des dépendances
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 5. Copie du code du backend
-COPY . .
+COPY backend/ .
 
 # 6. Exposition du port utilisé par FastAPI
 EXPOSE 8000
