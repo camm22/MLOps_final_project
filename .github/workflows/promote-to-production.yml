@@ -36,6 +36,7 @@ jobs:
         python -c "
         import mlflow
         import os
+        os.environ['MLFLOW_TRACKING_URI'] = 'https://dagshub.com/${{ secrets.MLFLOW_TRACKING_USERNAME }}/MLOps_final_project.mlflow'
         client = mlflow.tracking.MlflowClient()
         staging_version = client.get_model_version_by_alias('iris_logistic_model', 'staging')
         client.set_registered_model_alias('iris_logistic_model', 'production', staging_version.version)
