@@ -41,3 +41,4 @@ jobs:
       if: success()
       run: |
         curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_STAGING }}
+        curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_FRONTEND_STAGING }}
